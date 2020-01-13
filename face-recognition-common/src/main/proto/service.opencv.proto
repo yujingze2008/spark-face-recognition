@@ -1,0 +1,35 @@
+syntax = "proto3";
+option java_package = "com.gitee.code4fun.facerecognition.common.rpc.stub";
+option java_outer_classname = "OpenCVServiceProto";
+
+package service;
+
+service OpenCVService {
+
+    rpc getFaceTagImage(OpenCVBasicRequest) returns (ImageResponse){}
+
+    rpc getFaceImages(OpenCVBasicRequest) returns (ImageResponse){}
+
+    rpc getFaceVector(OpenCVBasicRequest) returns (VectorResponse){}
+
+}
+
+message OpenCVBasicRequest {
+    string imageCode = 1;
+}
+
+
+message OpenCVBasicResponse {
+    string code = 1;
+    string desc = 2;
+}
+
+message ImageResponse {
+    OpenCVBasicResponse basicResponse = 1;
+    string imageCode = 2;
+}
+
+message VectorResponse {
+    OpenCVBasicResponse basicResponse = 1;
+    string vectorCode = 2;
+}
