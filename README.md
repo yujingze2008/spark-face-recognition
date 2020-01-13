@@ -1,0 +1,2 @@
+# face-recognition
+Java实现的基于OpenCV与Spark的人脸识别项目
